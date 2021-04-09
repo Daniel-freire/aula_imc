@@ -87,7 +87,20 @@ class _CalculoImcWidgetState extends State<CalculoImcWidget> {
                   _calcularimc();
                 }
               },
-              child: Text('Calcular'),
+              child: Text('Calcular IMC Masculino'),
+              
+            ),
+          ),
+
+           Container(
+            margin: EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: (){
+                if(_formkey.currentState.validate()){
+                  _calcularimc();
+                }
+              },
+              child: Text('Calcular IMC Feminino'),
               
             ),
           ),
