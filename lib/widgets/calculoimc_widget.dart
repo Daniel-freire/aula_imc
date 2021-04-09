@@ -14,25 +14,45 @@ class _CalculoImcWidgetState extends State<CalculoImcWidget> {
 
   String _resultadoimc;
 
-  void _calcularimc(){
+  void _calcularimcmasculino(){
     double altura = double.parse(alturacontroller.text)/100.0;
     double peso = double.parse(pesocontroller.text);
     double imc = peso/pow(altura, 2);
 
     setState(() {
-      _resultadoimc = imc.toStringAsFixed(2) + "\n\n" +getClassificacao(imc);
+      _resultadoimc = imc.toStringAsFixed(2) + "\n\n" +getClassificacaomasculino(imc);
     });
 
   }
 
-  String getClassificacao(num imc){
+  void _calcularimcfeminino(){
+    double altura = double.parse(alturacontroller.text)/100.0;
+    double peso = double.parse(pesocontroller.text);
+    double imc = peso/pow(altura, 2);
+
+    setState(() {
+      _resultadoimc = imc.toStringAsFixed(2) + "\n\n" +getClassificacaofeminino(imc);
+    });
+
+  }
+
+  String getClassificacaomasculino(num imc){
     String strclassificacao;
-    if(imc<18.6) strclassificacao = "Abaixo do peso";
-    else if(imc<25.0) strclassificacao = "Peso ideal";
-    else if(imc<30.0) strclassificacao = "Levemente acima do peso";
-    else if(imc<35.0) strclassificacao = "Obesidade grau I";
-    else if(imc<40.0) strclassificacao = "Obesidade grau II";
-    else strclassificacao = "Obesidade grau III";
+    if(imc<20.7) strclassificacao = "Abaixo do peso";
+    else if((imc>=20.7)&&(imc<=26.4)) strclassificacao = "Peso ideal";
+    else if((imc>=26.5)&&(imc<=27.8)) strclassificacao = "Pouco acima do Peso";
+    else if((imc>=27.9)&&(imc<=31.1)) strclassificacao = "Acima do peso";
+    else if(imc>=31.2) strclassificacao = "Obesidade";
+    return strclassificacao;
+  }
+
+  String getClassificacaofeminino(num imc){
+    String strclassificacao;
+    if(imc<19.1) strclassificacao = "Abaixo do peso";
+    else if((imc>=19.1)&&(imc<=25.8)) strclassificacao = "Peso ideal";
+    else if((imc>=25.9)&&(imc<=27.3)) strclassificacao = "Pouco acima do Peso";
+    else if((imc>=27.4)&&(imc<=32.3)) strclassificacao = "Acima do Peso";
+    else if(imc>=32.4) strclassificacao = "Obesidade";
     return strclassificacao;
   }
 
@@ -84,7 +104,7 @@ class _CalculoImcWidgetState extends State<CalculoImcWidget> {
             child: ElevatedButton(
               onPressed: (){
                 if(_formkey.currentState.validate()){
-                  _calcularimc();
+                  _calcularimcmasculino();
                 }
               },
               child: Text('Calcular IMC Masculino'),
@@ -97,7 +117,7 @@ class _CalculoImcWidgetState extends State<CalculoImcWidget> {
             child: ElevatedButton(
               onPressed: (){
                 if(_formkey.currentState.validate()){
-                  _calcularimc();
+                  _calcularimcfeminino();
                 }
               },
               child: Text('Calcular IMC Feminino'),
