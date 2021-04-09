@@ -1,13 +1,12 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
-class CalculoImcWidget extends StatefulWidget {
+class CalculoIacWidget extends StatefulWidget {
   @override
-  _CalculoImcWidgetState createState() => _CalculoImcWidgetState();
+  _CalculoIacWidgetState createState() => _CalculoIacWidgetState();
 }
 
-class _CalculoImcWidgetState extends State<CalculoImcWidget> {
+class _CalculoIacWidgetState extends State<CalculoIacWidget> {
   GlobalKey<FormState> _formkey = GlobalKey<FormState>(); 
   TextEditingController alturacontroller = TextEditingController();
   TextEditingController pesocontroller = TextEditingController();
@@ -56,6 +55,7 @@ class _CalculoImcWidgetState extends State<CalculoImcWidget> {
     return strclassificacao;
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -70,7 +70,7 @@ class _CalculoImcWidgetState extends State<CalculoImcWidget> {
               keyboardType: TextInputType.number, //Teclado que será exibido para o usuário
               controller: alturacontroller,
               validator: (value){
-                return value.isEmpty ? "informe a autura": null; // Ve se digitou algo ou nã
+                return value.isEmpty ? "informe a autura": null; // Ve se digitou algo ou não
               },
               decoration: InputDecoration(
                 labelText: "Altura em cm",
