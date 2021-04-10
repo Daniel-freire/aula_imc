@@ -70,7 +70,7 @@ class _CalculoImcWidgetState extends State<CalculoImcWidget> {
               keyboardType: TextInputType.number, //Teclado que será exibido para o usuário
               controller: alturacontroller,
               validator: (value){
-                return value.isEmpty ? "informe a autura": null; // Ve se digitou algo ou nã
+                return value.isEmpty ? "informe a autura": null; // Ve se digitou algo ou não
               },
               decoration: InputDecoration(
                 labelText: "Altura em cm",

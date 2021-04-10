@@ -1,4 +1,3 @@
-import 'package:aula_imc/widgets/calculoIMC_widget.dart';
 import 'package:aula_imc/widgets/calculoiac_widget.dart';
 import 'package:flutter/material.dart';
 
