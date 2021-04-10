@@ -1,6 +1,5 @@
 import 'package:aula_imc/screens/calculoiac_screen.dart';
 import 'package:aula_imc/screens/calculoimc_screen.dart';
-import 'package:aula_imc/widgets/calculoiac_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

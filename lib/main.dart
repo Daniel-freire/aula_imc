@@ -1,4 +1,3 @@
-import 'package:aula_imc/screens/calculoiac_screen.dart';
 import 'package:aula_imc/screens/home_screens.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Calculos',
       home: HomeScreen(),
-     //home: CalculoIacScreen()
     );
   }
 }
